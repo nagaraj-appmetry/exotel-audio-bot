@@ -18,8 +18,8 @@ ws.on("open", () => {
   );
 
   // 2️⃣ Stream WAV audio as base64 chunks
-  const filePath = path.join(__dirname, "audio", "input.mp3");
-  const stream = fs.createReadStream(filePath, { highWaterMark: 1024 });
+const filePath = path.join(__dirname, "audio", "input.mp3");
+const stream = fs.createReadStream(filePath, { highWaterMark: 1024 });
 
   stream.on("data", (chunk) => {
     const payload = chunk.toString("base64");
