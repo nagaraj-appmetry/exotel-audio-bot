@@ -2,10 +2,10 @@ const fs = require("fs");
 const path = require("path");
 
 function sendBotAudio(ws) {
-  const audioPath = path.join(__dirname, "audio", "bot-response.wav");
+  const audioPath = path.join(__dirname, "audio", "bot-response.mp3");
 
   const readStream = fs.createReadStream(audioPath, {
-    highWaterMark: 320, // approx. 20ms of audio at 16kHz mono 16-bit
+    highWaterMark: 1024, // chunk size for mp3 streaming
   });
 
   let sequence = 0;
@@ -28,7 +28,7 @@ function sendBotAudio(ws) {
       clearInterval(interval);
       console.log("✅ Sent full bot response audio.");
     }
-  }, 20); // emulate 20ms packet sending
+  }, 40); // adjusted interval for mp3 streaming
 }
 
 module.exports = { sendBotAudio };

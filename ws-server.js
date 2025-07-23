@@ -11,7 +11,7 @@ wss.on("connection", function connection(ws) {
   console.log("✅ Voicebot connected!");
 
   const fileStream = fs.createWriteStream(
-    path.join(__dirname, "audio", "input.wav"),
+    path.join(__dirname, "audio", "response", "input.mp3"),
     {
       flags: "w",
     }
