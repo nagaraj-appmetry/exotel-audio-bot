@@ -9,6 +9,7 @@ class Config:
             "description": "Complete customer relationship management"
         }
     ]
+    OPENAI_API_KEY = "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"
     TEMPERATURE = 0.7
     SALES_RESPONSES = {
         "greeting": "Hi! I'm {bot_name} from {company}. How can I help?",
