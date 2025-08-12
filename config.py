@@ -9,6 +9,7 @@ class Config:
             "description": "Complete customer relationship management"
         }
     ]
+    LANGUAGE_CODE = "en-US" 
     TEMPERATURE = 0.7
     SALES_RESPONSES = {
         "greeting": "Hi! I'm {bot_name} from {company}. How can I help?",
@@ -21,15 +22,13 @@ class Config:
         "interest_level": {"high": 5, "medium": 3, "low": 1}
     }
     STT_ENGINE = "google"
-    TTS_ENGINE = "gtts"
-    LANGUAGE_CODE = "en-US"
     SAMPLE_RATE = 8000
     CRM_WEBHOOK_URL = "https://your-crm.com/webhook/leads"
     SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/your/webhook"
     BUFFER_SIZE_MS = 200
     OPENAI_MODEL = "gpt-4o-realtime"
     SERVER_HOST = "0.0.0.0"
-    SERVER_PORT = 5000
+    SERVER_PORT = 3000
     LEAD_SCORE_THRESHOLD = 12
     SESSION_TIMEOUT_MINUTES = 30
     MAX_FAILED_LOGINS = 5
@@ -38,14 +37,19 @@ class Config:
     NOISE_THRESHOLD = 300          # Less aggressive noise filtering (clear environment)
     VAD_THRESHOLD = 0.3    
     PREFIX_PADDING_MS = 100
+    LOCAL_BOT_URL = "http://127.0.0.1:8000/reply"   # your local bot server endpoint (POST)
+    TTS_ENGINE = "gtts"  # or 'pyttsx3' or 'elevenlabs' (we implement the gTTS path here)
+    TTS_CHUNK_MS = 200   # chunk duration when streaming back to Exotel
+
 
     @classmethod
     def validate(cls):
-        missing = []
-        if not cls.OPENAI_API_KEY or cls.OPENAI_API_KEY == "your-openai-api-key-here":
-            missing.append("OPENAI_API_KEY")
-        if missing:
-            raise ValueError(f"Missing or invalid config variable(s): {', '.join(missing)}")
+        # missing = []
+        # if not cls.OPENAI_API_KEY or cls.OPENAI_API_KEY == "your-openai-api-key-here":
+        #     missing.append("OPENAI_API_KEY")
+        # if missing:
+        #     raise ValueError(f"Missing or invalid config variable(s): {', '.join(missing)}")
+        pass   
 
     @classmethod
     def get_sales_instructions(cls):
