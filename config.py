@@ -44,6 +44,11 @@ class Config:
 
     @classmethod
     def validate(cls):
+        # missing = []
+        # if not cls.OPENAI_API_KEY or cls.OPENAI_API_KEY == "your-openai-api-key-here":
+        #     missing.append("OPENAI_API_KEY")
+        # if missing:
+        #     raise ValueError(f"Missing or invalid config variable(s): {', '.join(missing)}")
         pass   
 
     @classmethod
