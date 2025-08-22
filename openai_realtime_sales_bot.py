@@ -17,7 +17,7 @@ import speech_recognition as sr
 import aiohttp
 from gtts import gTTS
 from pydub import AudioSegment
-from io import BytesIO
+from io import BytesIO0286
 import math
 
 
