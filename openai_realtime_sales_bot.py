@@ -101,8 +101,8 @@ class RealtimeSalesBot:
                     elif "stream_id" in data:
                         stream_id = data["stream_id"]
 
-                    logger.info(f"🆔 STREAM ID: {stream_id}")
-                    logger.info(f"🎯 EVENT: '{event}' for {stream_id}")
+                    # logger.info(f"🆔 STREAM ID: {stream_id}")
+                    # logger.info(f"🎯 EVENT: '{event}' for {stream_id}")
 
                     # Store Exotel connection (first time)
                     if stream_id not in self.exotel_connections:
@@ -579,7 +579,7 @@ class RealtimeSalesBot:
         Uses your exact curl endpoint: http://localhost:5000/get-reply
         """
         # Updated URL to match your curl endpoint
-        url = "http://127.0.0.1:5000/get-reply"
+        url = "http://127.0.0.1:3000/get-reply"
         
         if not transcript:
             logger.warning("⚠️ Empty transcript provided to bot")
